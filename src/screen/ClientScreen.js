@@ -1,10 +1,10 @@
 import { StyleSheet, View, Text } from "react-native";
 
-export default function RecoverPasswordScreen() {
+export default function ClientScreen() {
     return(
         <View style={styles.container}>
             <Text>
-                Tela do recuperar senha
+                Tela do cliente
             </Text>
         </View>
     )
