@@ -11,7 +11,7 @@ function MenuScreen({navigation}) {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-      <Text style={{ flexBasis: '80%'}}>Menu</Text>
+      <Text>Menu</Text>
         <Button style={styles.buttons} title="Receita" onPress={() => navigation.navigate('Receita')} />
         <Button style={styles.buttons} title="Relatorio" onPress={() => navigation.navigate('Relatorio')} />
         <Button style={styles.buttons} title="Cliente" onPress={() => navigation.navigate('Cliente')} />
