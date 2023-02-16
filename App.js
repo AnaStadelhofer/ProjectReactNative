@@ -4,17 +4,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
+import LoginScreen from './src/screen/LoginScreen';
+import RegisterUserScreen from './src/screen/RegisterUserScreen';
 
-function MenuScreen({navigation }) {
+function MenuScreen({navigation}) {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-      <Text>Menu</Text>
+      <Text style={{ flexBasis: '80%'}}>Menu</Text>
         <Button style={styles.buttons} title="Receita" onPress={() => navigation.navigate('Receita')} />
         <Button style={styles.buttons} title="Relatorio" onPress={() => navigation.navigate('Relatorio')} />
         <Button style={styles.buttons} title="Cliente" onPress={() => navigation.navigate('Cliente')} />
         <Button style={styles.buttons} title="Login" onPress={() => navigation.navigate('Login')} />
         <Button style={styles.buttons} title="Carrinho" onPress={() => navigation.navigate('Carrinho')} />
+        <Button style={styles.buttons} title="Cadastrar" onPress={() => navigation.navigate('RegisterUserScreen')} />
       </SafeAreaView>
     </View>
   );
@@ -55,17 +58,6 @@ function ClientesScreen({navigation}) {
   );
 }
 
-function LoginScreen({navigation}) {
-  return (
-    <View style={styles.container}>
-      <SafeAreaView>
-        <Text>Login</Text>
-        <Button title="Voltar" onPress={() => navigation.goBack()} />
-      </SafeAreaView>
-    </View>
-  );
-}
-
 function CarrinhoScreen({navigation}) {
   return (
     <View style={styles.container}>
@@ -95,6 +87,7 @@ function App() {
         <Stack.Screen name="Cliente" component={ClientesScreen} options={{ title: 'Clientes' }}/>
         <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }}/>
         <Stack.Screen name="Carrinho" component={CarrinhoScreen} options={{ title: 'Carrinho' }}/>
+        <Stack.Screen name="RegisterUserScreen" component={RegisterUserScreen} options={{ title: 'Cadastrar' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -107,11 +100,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"    
   },
   buttons: {
-    color: 'red',
-    borderRadius: 10
+    flex: 1,
+    flexBasis: '80%'
   }
 });
 
