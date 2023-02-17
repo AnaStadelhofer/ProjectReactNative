@@ -1,4 +1,3 @@
-import { StyleSheet, View, Text } from "react-native";
 import { View, StyleSheet, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,13 +19,13 @@ function OptionsMenu({navigation}) {
         <View style={styles.container}>
             <SafeAreaView>
                 <Text>Menu</Text>
-                <Button style={styles.buttons} title="Revenue" onPress={() => navigation.navigate('RevenueScreen')} />
-                <Button style={styles.buttons} title="Report" onPress={() => navigation.navigate('ReportScreen')} />
-                <Button style={styles.buttons} title="Client" onPress={() => navigation.navigate('ClientScreen')} />
+                <Button style={styles.buttons} title="Receita" onPress={() => navigation.navigate('RevenueScreen')} />
+                <Button style={styles.buttons} title="Relatório" onPress={() => navigation.navigate('ReportScreen')} />
+                <Button style={styles.buttons} title="Cliente" onPress={() => navigation.navigate('ClientScreen')} />
                 <Button style={styles.buttons} title="Login" onPress={() => navigation.navigate('LoginScreen')} />
-                <Button style={styles.buttons} title="Cart" onPress={() => navigation.navigate('CartScreen')} />
-                <Button style={styles.buttons} title="Register" onPress={() => navigation.navigate('RegisterUserScreen')} />
-                <Button style={styles.buttons} title="RecoverPassword" onPress={() => navigation.navigate('RecoverPasswordScreen')} />
+                <Button style={styles.buttons} title="Carrinho" onPress={() => navigation.navigate('CartScreen')} />
+                <Button style={styles.buttons} title="Registrar" onPress={() => navigation.navigate('RegisterUserScreen')} />
+                <Button style={styles.buttons} title="Recuperar senha" onPress={() => navigation.navigate('RecoverPasswordScreen')} />
             </SafeAreaView>
         </View>
     )
