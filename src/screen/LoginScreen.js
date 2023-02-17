@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Alert } from 'react-native';
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -53,9 +53,13 @@ export default function LoginScreen() {
       </View>
       <View style={styles.dividerContainer}>
         <View style={styles.divider} />
-        <Text style={styles.dividerText}>I forgot my password</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('RecoverPasswordScreen')}>
+          <Text style={styles.dividerText}>Esqueci minha senha</Text>
+        </TouchableOpacity>
         <View style={styles.divider} />
-        <Text style={styles.dividerText}>I don't have an account</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('RegisterUserScreen')}>
+          <Text style={styles.dividerText}>Não possuo conta</Text>
+        </TouchableOpacity>
         <View style={styles.divider} />
       </View>
     </View>

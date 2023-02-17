@@ -1,7 +1,6 @@
-import { View, StyleSheet, Text, Button } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 // IMPORT THE SCREENS
 import LoginScreen from './LoginScreen';
@@ -11,6 +10,7 @@ import ClientScreen from './ClientScreen';
 import RecoverPasswordScreen from './RecoverPassowrdScreen';
 import ReportScreen from './ReportScreen';
 import RevenueScreen from './RevenueScreen';
+import { TouchableOpacity } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,14 +18,30 @@ function OptionsMenu({navigation}) {
     return(
         <View style={styles.container}>
             <SafeAreaView>
+                <View style={styles.containerForm}>
                 <Text>Menu</Text>
-                <Button style={styles.buttons} title="Receita" onPress={() => navigation.navigate('RevenueScreen')} />
-                <Button style={styles.buttons} title="Relatório" onPress={() => navigation.navigate('ReportScreen')} />
-                <Button style={styles.buttons} title="Cliente" onPress={() => navigation.navigate('ClientScreen')} />
-                <Button style={styles.buttons} title="Login" onPress={() => navigation.navigate('LoginScreen')} />
-                <Button style={styles.buttons} title="Carrinho" onPress={() => navigation.navigate('CartScreen')} />
-                <Button style={styles.buttons} title="Registrar" onPress={() => navigation.navigate('RegisterUserScreen')} />
-                <Button style={styles.buttons} title="Recuperar senha" onPress={() => navigation.navigate('RecoverPasswordScreen')} />
+                <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('RevenueScreen')} >
+                    <Text style={styles.menuButtonText}>Receita</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('ReportScreen')} >
+                    <Text style={styles.menuButtonText}>Relatório</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('ClientScreen')} >
+                    <Text style={styles.menuButtonText}>CLientes</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('LoginScreen')} >
+                    <Text style={styles.menuButtonText}>Login</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('CartScreen')} >
+                    <Text style={styles.menuButtonText}>Carrinho</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('RegisterUserScreen')} >
+                    <Text style={styles.menuButtonText}>Registrar</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.menuButton} onPress={() => navigation.navigate('RecoverPasswordScreen')} >
+                    <Text style={styles.menuButtonText}>Recuperar</Text>
+                </TouchableOpacity>
+                </View>
             </SafeAreaView>
         </View>
     )
@@ -50,10 +66,24 @@ export default function MenuScreen() {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      alignItems: "center",
-      justifyContent: "center"    
-    }
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+    },
+    containerForm: {
+        width: '100%',
+    },
+    menuButton: {
+        height: 50,
+        backgroundColor: '#2196f3',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    menuButtonText: {
+        color: '#fff',
+        fontSize: 18,
+    },
 });
   
