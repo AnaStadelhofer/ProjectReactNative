@@ -1,7 +1,7 @@
-import { View, StyleSheet, Text, Button } from 'react-native';
+import { View, StyleSheet, SafeAreaView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import ButtonCentralized from '../components/ButtonCentralized';
 
 // IMPORT THE SCREENS
 import LoginScreen from './LoginScreen';
@@ -18,14 +18,13 @@ function OptionsMenu({navigation}) {
     return(
         <View style={styles.container}>
             <SafeAreaView>
-                <Text>Menu</Text>
-                <Button style={styles.buttons} title="Receita" onPress={() => navigation.navigate('RevenueScreen')} />
-                <Button style={styles.buttons} title="Relatório" onPress={() => navigation.navigate('ReportScreen')} />
-                <Button style={styles.buttons} title="Cliente" onPress={() => navigation.navigate('ClientScreen')} />
-                <Button style={styles.buttons} title="Login" onPress={() => navigation.navigate('LoginScreen')} />
-                <Button style={styles.buttons} title="Carrinho" onPress={() => navigation.navigate('CartScreen')} />
-                <Button style={styles.buttons} title="Registrar" onPress={() => navigation.navigate('RegisterUserScreen')} />
-                <Button style={styles.buttons} title="Recuperar senha" onPress={() => navigation.navigate('RecoverPasswordScreen')} />
+                <ButtonCentralized title="Receita" onPress={() => navigation.navigate('RevenueScreen')}/>
+                <ButtonCentralized title="Relatório" onPress={() => navigation.navigate('ReportScreen')}/>
+                <ButtonCentralized title="Clientes" onPress={() => navigation.navigate('ClientScreen')}/>
+                <ButtonCentralized title="Login" onPress={() => navigation.navigate('LoginScreen')}/>
+                <ButtonCentralized title="Carrinho" onPress={() => navigation.navigate('CartScreen')}/>
+                <ButtonCentralized title="Registrar" onPress={() => navigation.navigate('RegisterUserScreen')}/>
+                <ButtonCentralized title="Recuperar" onPress={() => navigation.navigate('RecoverPasswordScreen')}/>
             </SafeAreaView>
         </View>
     )
@@ -50,10 +49,10 @@ export default function MenuScreen() {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      alignItems: "center",
-      justifyContent: "center"    
-    }
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+    },
 });
   
