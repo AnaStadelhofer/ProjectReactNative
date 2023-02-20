@@ -32,7 +32,7 @@ export default function RegisterUserScreen({navigation}){
         <View style={styles.container}>
             <SafeAreaView>
                 <TextInputMandatory placeholder="Nome *" mask={false} type="text" valueInput={nameUser} newValueInput={setNameUser}/>
-                <TextInputMandatory placeholder="Email *" mask={false} type="mail" valueInput={mailUser} newValueInput={setMailUser}/>
+                <TextInputMandatory placeholder="Email *" mask={false} type="emailAddress" valueInput={mailUser} newValueInput={setMailUser}/>
                 <TextInputMandatory placeholder="Senha *" mask={true} type="password" valueInput={password} newValueInput={setPassword}/>
 
                     <Text style={styles.error}>
