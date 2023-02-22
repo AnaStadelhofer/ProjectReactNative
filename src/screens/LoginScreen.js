@@ -24,6 +24,7 @@ export default function LoginScreen({navigation}) {
         <ButtonCentralized title="Confirmar" onPress={handleLogin} />
   
         <Divider />
+        
         <TextLink onPress={() => navigation.navigate('RecoverPasswordScreen')} text="Esqueci minha senha!"/>
         <TextLink onPress={() => navigation.navigate('RegisterUserScreen')} text="Não possuo conta!"/>
         </SafeAreaView>

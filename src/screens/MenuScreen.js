@@ -6,7 +6,7 @@ import ButtonCentralized from '../components/ButtonCentralized';
 // IMPORT THE SCREENS
 import LoginScreen from './LoginScreen';
 import RegisterUserScreen from './RegisterUserScreen';
-import CartScreen from './CartSreen';
+import CartScreen from './CartScreen';
 import ClientScreen from './ClientScreen';
 import RecoverPasswordScreen from './RecoverPassowrdScreen';
 import ReportScreen from './ReportScreen';
