@@ -1,4 +1,6 @@
-import { StyleSheet, TextInput } from "react-native";
+import { StyleSheet, Dimensions, TextInput} from "react-native"
+
+    const { width } = Dimensions.get('window');
 
 export default function TextInputForm({placeholder, mask, type, valueInput, newValueInput}) {
     return(
@@ -22,5 +24,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingLeft: 10,
         marginBottom: 20,
+        width: width * 0.6,
       },
 })
