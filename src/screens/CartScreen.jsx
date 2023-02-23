@@ -32,7 +32,7 @@ export default function CartScreen() {
                 <Icon name="square-o" size={24} color="#000" />
               )}
             </TouchableOpacity>
-            <View styles={styles.iconsCrud} >
+            <View styles={styles.iconsCrud}>
               <TouchableOpacity onPress={handlePress}>
                 <Icon name="trash" size={24} color="#000" />
               </TouchableOpacity>
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     width: width * 0.9,
   },
   iconsCrud: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end'
-  }
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
 });
