@@ -11,12 +11,14 @@ import ClientScreen from './ClientScreen';
 import RecoverPasswordScreen from './RecoverPassowrdScreen';
 import ReportScreen from './ReportScreen';
 import RevenueScreen from './RevenueScreen';
+import Logo from '../components/Logo';
 
 const Stack = createNativeStackNavigator();
 
 function OptionsMenu({navigation}) {
     return(
         <View style={styles.container}>
+            <Logo/>
             <SafeAreaView>
                 <ButtonCentralized title="Receita" onPress={() => navigation.navigate('RevenueScreen')}/>
                 <ButtonCentralized title="Relatório" onPress={() => navigation.navigate('ReportScreen')}/>
