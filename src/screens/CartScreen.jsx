@@ -3,49 +3,43 @@ import {
   View,
   StyleSheet,
   Dimensions,
-  TouchableOpacity,
   ScrollView,
+  Modal,
+  TextInput,
+  Button,
 } from "react-native";
 import BottomButton from "../components/BottomButton";
-import Icon from "react-native-vector-icons/FontAwesome";
+import Card from "../components/Card";
 
-const { width } = Dimensions.get("window");
 
 const handleCreate = () => {};
 
 export default function CartScreen() {
-  const [isChecked, setChecked] = useState(false);
-
-  const handlePress = () => {
-    setChecked(!isChecked);
-  };
+  
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <View style={styles.container}>
-      <View style={styles.scrollContainer}>
-        <ScrollView style={styles.scrollView}>
-          <View style={styles.boxCart}>
-            <TouchableOpacity onPress={handlePress}>
-              {isChecked ? (
-                <Icon name="check-square-o" size={24} color="#000" />
-              ) : (
-                <Icon name="square-o" size={24} color="#000" />
-              )}
-            </TouchableOpacity>
-            <View styles={styles.iconsCrud}>
-              <TouchableOpacity onPress={handlePress}>
-                <Icon name="trash" size={24} color="#000" />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={handlePress}>
-                <Icon name="edit" size={24} color="#000" />
-              </TouchableOpacity>
-            </View>
-          </View>
-        </ScrollView>
-      </View>
+      <ScrollView style={styles.scrollView}>
+        <Card
+          text="Batata"
+          onPressDelete={() => setModalVisible(true)}
+          onPressEdit={() => setModalVisible(true)}
+        />
+      </ScrollView>
+
       <View style={styles.buttonContainer}>
         <BottomButton title="Adicionar" onPress={handleCreate} />
       </View>
+
+      <Modal visible={modalVisible} animationType="slide">
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <TextInput placeholder="Digite algo..." />
+          <Button title="Fechar modal" onPress={() => setModalVisible(false)} />
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -70,20 +64,5 @@ const styles = StyleSheet.create({
     height: "10%",
     alignItems: "center",
     justifyContent: "center",
-  },
-  boxCart: {
-    backgroundColor: "#d8d5d6cc",
-    width: "100%",
-    height: 65,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingLeft: 10,
-    marginTop: 20,
-    width: width * 0.9,
-  },
-  iconsCrud: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-  },
+  }
 });

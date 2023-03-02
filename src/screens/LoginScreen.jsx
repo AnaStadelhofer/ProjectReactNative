@@ -5,6 +5,7 @@ import Divider from '../components/Divider';
 import TextLink from '../components/TextLink';
 import ButtonCentralized from '../components/ButtonCentralized';
 import Logo from '../components/Logo';
+import { useLayoutEffect } from 'react';
 
 export default function LoginScreen({navigation}) {
   const [mailUser, setMailUser] = useState('');
@@ -13,7 +14,11 @@ export default function LoginScreen({navigation}) {
   const handleLogin = () => {
     Alert.alert('Login', `Email: ${mailUser} Password: ${password}`);
   };
-
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+  }, [navigation]);
   return (
     <View style={styles.container}>
       <Logo />

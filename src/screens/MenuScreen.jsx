@@ -2,6 +2,7 @@ import { View, StyleSheet, SafeAreaView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ButtonCentralized from '../components/ButtonCentralized';
+import { useLayoutEffect } from 'react';
 
 // IMPORT THE SCREENS
 import LoginScreen from './LoginScreen';
@@ -16,6 +17,11 @@ import Logo from '../components/Logo';
 const Stack = createNativeStackNavigator();
 
 function OptionsMenu({navigation}) {
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerShown: false,
+        });
+      }, [navigation]);
     return(
         <View style={styles.container}>
             <Logo/>

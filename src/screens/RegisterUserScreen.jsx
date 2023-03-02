@@ -4,6 +4,7 @@ import ButtonCentralized from "../components/ButtonCentralized";
 import TextInputMandatory from "../components/TextInputMandatory";
 import TextLink from "../components/TextLink";
 import Divider from "../components/Divider";
+import { useLayoutEffect } from "react";
 
 export default function RegisterUserScreen({navigation}){
     const [password, setPassword] = useState('');
@@ -28,6 +29,12 @@ export default function RegisterUserScreen({navigation}){
         }
     }
 
+    useLayoutEffect(() => {
+        navigation.setOptions({
+          headerShown: false,
+        });
+    }, [navigation]);
+
     return(
         <View style={styles.container}>
             <SafeAreaView>
@@ -41,9 +48,9 @@ export default function RegisterUserScreen({navigation}){
 
                 <TextInputMandatory placeholder="Confirmar Senha *" mask={true} type="password" valueInput={confirmPassword} newValueInput={setConfirmPassword}/>
                 
-                <Text style={styles.error}>
-                        {arePasswordsEqual(password, confirmPassword) ? '' : 'As senhas não são iguais.'}
-                </Text>
+                    <Text style={styles.error}>
+                            {arePasswordsEqual(password, confirmPassword) ? '' : 'As senhas não são iguais.'}
+                    </Text>
 
                 <ButtonCentralized title="Confirmar" onPress={handleSave}/>
 
