@@ -20,5 +20,8 @@
 1. npm install @react-navigation/native-stack
 1. npx expo install react-native-screens react-native-safe-area-context
 
+## Generate APK
 
-
+1. npm install -g eas-cli
+1. eas build -p android
+1. Login and Password
